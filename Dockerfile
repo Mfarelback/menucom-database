@@ -30,6 +30,4 @@ ENV MYSQL_PASSWORD=1234
 EXPOSE 3306
 
 # Comando para iniciar Docker y MySQL
-CMD service docker start && \
-    docker run -d --name mysqldb -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -e MYSQL_DATABASE=$MYSQL_DATABASE -e MYSQL_USER=$MYSQL_USER -e MYSQL_PASSWORD=$MYSQL_PASSWORD -p 3306:3306 -v /var/lib/mysql --network default mysql:5.7 && \
-    tail -f /dev/null
+CMD service docker start -d
