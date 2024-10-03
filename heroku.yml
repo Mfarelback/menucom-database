@@ -1,0 +1,6 @@
+build:
+  docker:
+    web: Dockerfile
+
+run:
+  web: docker run -d --name mysqldb -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=menucom_dev -e MYSQL_USER=menucom -e MYSQL_PASSWORD=1234 -p 3306:3306 -v /var/lib/mysql --network default mysql:5.7
